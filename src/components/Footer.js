@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="site-footer__menu">
         <ul>
           <li>
-            <a href="#">
+            {/* <a href="#">
               <i className="fab fa-youtube site-footer__icon"></i>
               Youtube
             </a>
@@ -22,7 +22,7 @@ const Footer = () => {
             <a href="#">
               <i className="fab fa-instagram site-footer__icon"></i>
               Instagram
-            </a>
+            </a> */}
           </li>
         </ul>
       </div>
