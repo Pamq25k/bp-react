@@ -1,18 +1,11 @@
-import _ from "lodash";
 import { combineReducers } from "redux";
 
-const productsReducer = (state = {}, action) => {
-  switch (action.type) {
-    case "FETCH_PRODUCTS":
-      return { ...state, ..._.keyBy(action.payload, "id") };
-    case "FETCH_PRODUCT":
-      return { ...state, [action.payload.id]: action.payload };
-
-    default:
-      return state;
-  }
-};
+import productsReducer from "./productsReducer";
+import cartReducer from "./cartReducer";
+import stateReducer from "./stateReducer";
 
 export default combineReducers({
   products: productsReducer,
+  cart: cartReducer,
+  state: stateReducer,
 });

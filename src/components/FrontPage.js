@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { fetchProducts } from "../actions";
 import LargeHero from "./LargeHero";
 import Item from "./Item";
+import { Wrapper, PageSection } from "./containers";
 
 class FrontPage extends React.Component {
   componentDidMount() {
@@ -11,8 +12,8 @@ class FrontPage extends React.Component {
   }
 
   renderList() {
-    const { products } = this.props;
-    if (products) {
+    if (this.props.state.isLoaded) {
+      const { products } = this.props;
       return Object.values(products).map((product) => {
         return <Item product={product} key={product.id} />;
       });
@@ -24,11 +25,11 @@ class FrontPage extends React.Component {
     return (
       <>
         <LargeHero />
-        <div className="page-section page-section--black">
-          <div className="wrapper">
+        <PageSection black>
+          <Wrapper>
             <div className="row">{this.renderList()}</div>
-          </div>
-        </div>
+          </Wrapper>
+        </PageSection>
       </>
     );
   }

@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Item = ({ product }) => {
-  const { id, images, name, price } = product;
   if (!product) {
     return "loading";
   }
+
+  const { id, images, name, price } = product;
 
   return (
     <div className="item">

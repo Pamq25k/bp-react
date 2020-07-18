@@ -1,17 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { Wrapper } from "./containers";
+
 class Header extends React.Component {
   render() {
     return (
-      <header
-        className="site-header"
-        style={{ height: "62px" }}
-        ref={this.headerRef}
-      >
-        <div className="wrapper">
+      <header className="site-header" style={{ height: "62px" }}>
+        <Wrapper>
           <div className="site-header__logo">
-            <h1 className="site-header__logo-text">Bands Merch</h1>
+            <h1 className="site-header__logo-text">
+              <Link to="/">Bands Merch</Link>
+            </h1>
+
             <img src="/assets/images/nadi2.gif" alt="" />
           </div>
           <div className="site-header__menu-icon" data-state="closed">
@@ -35,7 +36,7 @@ class Header extends React.Component {
               </ul>
             </nav>
           </div>
-        </div>
+        </Wrapper>
       </header>
     );
   }
